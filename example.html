@@ -1,0 +1,49 @@
+<?xml version="1.1" charset="UTF-8"?>
+<!DOCTYPE html>
+<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<script src="http://js.azatoth.net/libs/jquery/1.4.2/jquery.js"></script>
+		<script src="http://js.azatoth.net/libs/jquery-ui/1.8/ui/jquery-ui.js"></script>
+		<script src="jquery.throbber.js"></script>
+		<link rel="stylesheet" href="http://js.azatoth.net/libs/jquery-ui/1.8/themes/base/jquery-ui.css" />
+		<link rel="stylesheet" href="jquery.throbber.css" />
+		<title>jQuery UI Throbber test</title>
+		<style>
+			.box1 {
+				width: 300px;
+				height: 100px;
+				border: 1px solid gray;
+				position: relative;
+			}
+			.box2 {
+				width: 300px;
+				height: 100px;
+				border: 1px solid gray;
+				position: relative;
+				background-color: black;
+			}
+			#global {
+				z-index: 9999999 !important;
+			}
+			
+		</style>
+		<script type="text/javascript"
+			src="http://jqueryui.com/themeroller/themeswitchertool/">
+		</script>
+		<script>
+			$(function(){
+				$('#switcher').themeswitcher();
+				$('#global').toggle( function(){$.throbber.show({overlay: false})}, $.throbber.hide );
+				$('.box1').throbber().throbber('show');
+				$('.box2').throbber().throbber('show');
+			});
+		</script>
+
+	</head>
+	<body>
+		<button id="global">Toggle global throbber</button>
+		<div class="box1"></div>
+		<div class="box2"></div>
+	</body>
+</html>
